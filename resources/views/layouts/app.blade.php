@@ -23,7 +23,8 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -43,15 +44,16 @@
 <body>
     <div class="uppercase text-center absolute left-0 top-0 w-full h-screen flex flex-col items-center justify-center bg-white z-50"
         id="loader">
-        <div class="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-blue-900 mx-auto">
+        <div
+            class="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-[{{ config('theme.primary') }}] mx-auto">
         </div>
-        <h2 class="text-zinc-900 mt-4">Loading...</h2>
-        <p class="text-zinc-600 dark:text-zinc-400">
+        <h2 class="text-[{{ config('theme.text.default') }}] mt-4">Loading...</h2>
+        <p class="text-[{{ config('theme.text.default') }}] dark:text-zinc-400">
             Your CRM is right this way
         </p>
     </div>
 
-    <div class="h-screen text-xs font-medium uppercase bg-gray-50/20">
+    <div class="h-screen text-xs font-medium uppercase bg-[{{ config('theme.background.default') }}]">
         <div class="flex h-full">
             @include('layouts.navigation')
 
@@ -60,7 +62,7 @@
                 <!-- Page Heading -->
                 <x-header />
                 <!-- Page Content -->
-                <main class="h-auto border-2 border-blue-900 rounded-md mx-8 my-4">
+                <main class="h-auto border-2 border-[{{ config('theme.primary') }}] rounded-md mx-8 my-4">
                     {{ $slot }}
                 </main>
             </div>

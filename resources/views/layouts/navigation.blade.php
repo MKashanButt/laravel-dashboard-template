@@ -1,5 +1,5 @@
 <nav x-data="{ open: false }"
-    class="w-64 h-auto bg-blue-900/90 text-white text-xs overflow-y-auto mt-2 mb-2 ml-2 rounded-md backdrop-blur-xs shadow-md">
+    class="w-64 h-auto bg-[{{ config('theme.primary') }}] text-[{{ config('theme.text.inverted') }}] text-xs overflow-y-auto mt-2 mb-2 ml-2 rounded-md backdrop-blur-xs shadow-md">
     <!-- Logo -->
     <div class="h-16 flex items-center px-4 border-b-2 border-white">
         <a href="{{ route('dashboard') }}" class="flex items-center">
